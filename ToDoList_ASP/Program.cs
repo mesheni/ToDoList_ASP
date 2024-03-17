@@ -1,3 +1,5 @@
+using Tailwind;
+
 namespace ToDoList_ASP
 {
     public class Program
@@ -11,6 +13,7 @@ namespace ToDoList_ASP
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
+                _ = app.RunTailwind("tailwind", "./");
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
@@ -27,7 +30,6 @@ namespace ToDoList_ASP
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
-
 
             //app.MapGet("/", () => "Hello World!");
 

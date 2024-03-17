@@ -7,8 +7,28 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <header class="container mx-auto pb-12">
+        <div class="flex justify-between pt-3">
+            <span class="font-bold text-4xl">ToDoListASP</span>
+
+            <div class="space-x-5">
+                <a asp-controller="" asp-action="" class="bg-red-400 py-2 px-4 rounded-3xl hover:bg-red-600 text-white">Контакты</a>
+                <a asp-controller="Home" asp-action="Privacy" class="bg-red-400 py-2 px-4 rounded-3xl hover:bg-red-600 text-white">О сайте</a>
+            </div>
+        </div>
+    </header>
+    <div class="container mx-auto">
+        <div class="flex">
+            <div class="flex-none w-60 h-14 bg-amber-300">
+                <p>Text</p>
+            </div>
+            <div class="flex-1 w-64">
+                @RenderBody()
+            </div>
+            <div class="flex-none w-44 bg-blue-400">
+                <p>Text2</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
